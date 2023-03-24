@@ -17,16 +17,30 @@
 <body>
     <div id="container">
         <div id="header-container">
-            <h1>Clip Checker</h1>
+            <h1>Add Clips</h1>
             <!-- <img id="DopaminadosLogo" src="assets/DopaminadosLogo.png" alt=""> -->
 
         </div>
-        <div class="input-container">
-            <input placeholder="Check Clip" id="clipInput" type="text">
-            <img src="assets/search.svg" alt="">
+        <div class="form-container">
+            <form id="form" action="">
+                <input placeholder="Add Clip" id="clipInput" type="text">
+                <button type="submit" >
+                    <img src="/assets/plus-circle.svg" alt="">
+
+                </button>
+            </form>
+
         </div>
-        
+
+        <p>The clip will be automaticly added to Discord Channel</p>
+        <div id="message">
+            <p>Added</p>
+        </div>
     </div>
+
+    <footer>
+        <p><img src="assets/cc icon.png" alt=""> 2023 Dopaminados</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
