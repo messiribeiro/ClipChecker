@@ -6,7 +6,10 @@
 body{
     background-color: rgb(230, 230, 230);
     font-family: 'Roboto', sans-serif;
-    
+    user-select: none;
+    display: grid;
+    max-height: 100vh;
+    grid-template-rows: 4fr 1fr;
 }
 
 #container{
@@ -17,7 +20,22 @@ body{
     align-items: center;
     justify-content: center;
     gap: 2em;
+
+    animation: openning .3s ease-in-out;
 }
+
+@keyframes openning {
+    from{
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+
+    }
+}
+
 
 #container img#DopaminadosLogo{
     width: 5em;
@@ -34,7 +52,7 @@ body{
     color: rgba(253, 0, 97, 0.555);
 }
 
-.input-container {
+.form-container {
     width: 25em;
     height: 2.5em;
     border-radius: 5px;
@@ -42,13 +60,32 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding: 0 3px;
-    box-shadow: 0px 0px 3px rgb(0 0 0 / 30%);
+    /* padding: 0 3px; */
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.205);
     transition: .5s;
 
 }
 
-.input-container-focus {
+.form-container form, .form-container-focus form {
+    /* width: 25em;
+    height: 2.5em;
+    border-radius: 5px;
+    border: 1px solid rgba(68, 68, 68, 0.432); */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+form button{
+    border: none;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.form-container-focus {
     width: 25em;
     height: 2.5em;
     border-radius: 5px;
@@ -61,9 +98,10 @@ body{
     border: 1px solid rgba(243, 45, 104, 0.5) ;  
 }
 
-.input-container img, .input-container-focus img {
+.form-container img, .form-container-focus img {
     opacity: 0.5;
-    width: 20px;
+    width: 25px;
+    cursor: pointer;
 }
 
 #clipInput{
@@ -80,3 +118,79 @@ body{
     color:rgba(8, 8, 8, 0.301);
 }
 
+
+#container p {
+    color: rgba(0, 0, 0, 0.274);
+    font-size: 10pt;
+}
+
+
+footer img{
+    width: 1em;
+}
+footer{
+    opacity: 0.2;
+    animation: openning2 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes openning2 {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 0.3;
+    }
+}
+
+footer p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+}
+
+div#message {
+    height: 2em;
+    padding: 1em;
+    background-color: rgba(82, 252, 48, 0.541);   
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    position: absolute;
+    display: none;
+    top: 60vh;
+    animation: added 1s ease-in-out, shake 0.5s ease;
+    animation-iteration-count: infinite;
+}
+
+@keyframes added{
+    0%{
+        opacity: 0;
+        transform: translateY(+60px);
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: translateY(0);
+
+    }
+}
+
+@keyframes shake {
+    0%{
+        transform: translateX(-10px);
+    }
+    50%{
+        transform: translateX(+10px);
+    }
+    100%{
+        transform: translateX(-10px);
+    }
+
+}
