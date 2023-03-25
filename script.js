@@ -23,7 +23,7 @@ form.addEventListener("submit", async (event) => {
     if(input.value == "") {
         alert("Bota alguma coisa ae garai")
     }else{
-        const url = 'http://localhost:3333/addClip';
+        const url = 'https://addclip.onrender.com/addClip';
 
         const clip = {
             link: input.value
