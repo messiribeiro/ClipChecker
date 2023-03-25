@@ -19,12 +19,30 @@ input.addEventListener("blur", () => {
 
 })
 
-form.addEventListener("submit", (event) => {
+form.addEventListener("submit", async (event) => {
     if(input.value == "") {
         alert("Bota alguma coisa ae garai")
     }else{
-        console.log(input.value)
-        input.value = "";
+        const url = 'http://localhost:3333/addClip';
+
+        const clip = {
+            link: input.value
+        }
+        console.log(JSON.stringify(clip))
+
+        const options = {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(clip)
+          };
+          
+          fetch(url, options)
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error(error));
+        input.value='';
     }
 
     event.preventDefault();
