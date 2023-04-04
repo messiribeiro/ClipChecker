@@ -4,7 +4,7 @@
     padding: 0;
 }
 body{
-    background-color: rgb(230, 230, 230);
+    background-color: #27363b;
     font-family: 'Roboto', sans-serif;
     user-select: none;
     display: grid;
@@ -49,14 +49,14 @@ body{
     display: flex;
     align-items: center;
     gap: 5px;
-    color: rgba(253, 0, 97, 0.555);
+    color: #ffffff;
 }
 
 .form-container {
     width: 25em;
     height: 2.5em;
     border-radius: 5px;
-    border: 1px solid rgba(68, 68, 68, 0.432);
+    border: 1px solid rgba(255, 255, 255, 0.432);
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -95,13 +95,14 @@ form button{
     padding: 0 3px;
     box-shadow: 0px 0px 6px rgba(243, 45, 104, 0.226);
     transition: .2s;
-    border: 1px solid rgba(243, 45, 104, 0.5) ;  
+    border: 1px solid rgba(45, 243, 233, 0.5) ;  
 }
 
 .form-container img, .form-container-focus img {
     opacity: 0.5;
     width: 25px;
     cursor: pointer;
+    filter: invert(100%);
 }
 
 #clipInput{
@@ -110,23 +111,24 @@ form button{
     width: 25em;
     height: 2.5em;
     outline: none;
-    color: rgba(255, 0, 0, 0.575);
+    color: rgba(255, 255, 255, 0.575);
     border: none;
 }
 
 #clipInput::placeholder{
-    color:rgba(8, 8, 8, 0.301);
+    color:rgba(255, 255, 255, 0.301);
 }
 
 
 #container p {
-    color: rgba(0, 0, 0, 0.274);
+    color: rgba(255, 255, 255, 0.274);
     font-size: 10pt;
 }
 
 
 footer img{
     width: 1em;
+    filter: invert(100%);
 }
 footer{
     opacity: 0.2;
@@ -150,6 +152,7 @@ footer p{
     align-items: center;
     justify-content: center;
     gap: 3px;
+    color: white;
 }
 
 div#message {
